@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  <link rel="preload" href="/assets/fonts/SpaceGrotesk-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <title>Njoroge Mary | Developer Portfolio</title>
+</head>
+<body>
+  <header class="hero shell-lines">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <nav class="topbar" aria-label="Social links">
+          <p class="brand">njorogemary</p>
+          <div class="socials">
+            <a href="https://github.com/" aria-label="GitHub"><img src="/assets/images/icon-github.svg" alt=""></a>
+            <a href="https://linkedin.com/" aria-label="LinkedIn"><img src="/assets/images/icon-linkedin.svg" alt=""></a>
+            <a href="https://twitter.com/" aria-label="Twitter"><img src="/assets/images/icon-twitter.svg" alt=""></a>
+          </div>
+        </nav>
+        <p class="eyebrow">Frontend developer and Go builder</p>
+        <h1>Nice to meet you! I'm <span>Njoroge Mary.</span></h1>
+        <p>Based in Helsinki, I build accessible interfaces, practical backend services, and portfolio-ready products that are fast, clean, and easy to maintain.</p>
+        <div class="hero-actions">
+          <a class="cta" href="#contact">Contact me</a>
+          <a class="ghost-link" href="#projects">See projects</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img class="hero-photo" src="/assets/images/image-profile-desktop.webp" alt="Portrait of Njoroge Mary">
+        <div class="hero-card">
+          <p class="meta-label">Current focus</p>
+          <p>Shipping UI work with Go-powered forms, APIs, and deployment-friendly backends.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="skills">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Capabilities</p>
+        <h2>Skills that cover the full request, not just the interface.</h2>
+      </div>
+      <div class="skills-grid">
+        <article class="skill"><h2>HTML</h2><p class="meta">4 Years Experience</p></article>
+        <article class="skill"><h2>CSS</h2><p class="meta">4 Years Experience</p></article>
+        <article class="skill"><h2>JavaScript</h2><p class="meta">4 Years Experience</p></article>
+        <article class="skill"><h2>Accessibility</h2><p class="meta">4 Years Experience</p></article>
+        <article class="skill"><h2>React</h2><p class="meta">3 Years Experience</p></article>
+        <article class="skill"><h2>Go</h2><p class="meta">6 Months Experience</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects shell-lines" id="projects">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Selected work</p>
+        <h2>Frontend-heavy projects, now framed inside a Go application.</h2>
+      </div>
+      <div class="projects-grid">
+        <article class="project">
+          <img src="/assets/images/thumbnail-project-1-large.webp" alt="Design portfolio preview">
+          <h3>Design portfolio</h3>
+          <p class="meta">HTML CSS</p>
+          <div class="project-links"><a href="#contact">View project</a><a href="#contact">View code</a></div>
+        </article>
+        <article class="project">
+          <img src="/assets/images/thumbnail-project-2-large.webp" alt="E-learning landing page preview">
+          <h3>E-learning landing page</h3>
+          <p class="meta">HTML CSS</p>
+          <div class="project-links"><a href="#contact">View project</a><a href="#contact">View code</a></div>
+        </article>
+        <article class="project">
+          <img src="/assets/images/thumbnail-project-3-large.webp" alt="Todo web app preview">
+          <h3>Todo web app</h3>
+          <p class="meta">HTML CSS JavaScript</p>
+          <div class="project-links"><a href="#contact">View project</a><a href="#contact">View code</a></div>
+        </article>
+        <article class="project">
+          <img src="/assets/images/thumbnail-project-4-large.webp" alt="Entertainment web app preview">
+          <h3>Entertainment web app</h3>
+          <p class="meta">HTML CSS JavaScript</p>
+          <div class="project-links"><a href="#contact">View project</a><a href="#contact">View code</a></div>
+        </article>
+        <article class="project">
+          <img src="/assets/images/thumbnail-project-5-large.webp" alt="Memory game preview">
+          <h3>Memory Game</h3>
+          <p class="meta">HTML CSS JavaScript</p>
+          <div class="project-links"><a href="#contact">View project</a><a href="#contact">View code</a></div>
+        </article>
+        <article class="project">
+          <img src="/assets/images/thumbnail-project-6-large.webp" alt="Art gallery showcase preview">
+          <h3>Art gallery showcase</h3>
+          <p class="meta">HTML CSS JavaScript</p>
+          <div class="project-links"><a href="#contact">View project</a><a href="#contact">View code</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container contact-grid">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Tell me what you need built.</h2>
+        <p>I would love to hear about your project and how I could help. This form is validated by the Go backend and each successful submission is saved locally for follow-up.</p>
+      </div>
+      <div>
+        {{if .Success}}
+        <p class="notice">Message sent. Your submission was accepted and stored by the Go app.</p>
+        {{end}}
+        {{if .Error}}
+        <p class="error">{{.Error}}</p>
+        {{end}}
+        <form method="post" action="/contact">
+          <input type="text" name="name" placeholder="Name" value="{{.Name}}" required>
+          <input type="email" name="email" placeholder="Email" value="{{.Email}}" required>
+          <textarea name="message" placeholder="Message" required>{{.Message}}</textarea>
+          <button type="submit">Send message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>njorogemary</p>
+      <p class="meta">Built as a Go project with server-rendered HTML and static assets.</p>
+    </div>
+  </footer>
+</body>
+</html>

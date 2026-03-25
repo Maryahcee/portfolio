@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: single-page-developer-portfolio
+    runtime: go
+    plan: free
+    buildCommand: go build -o app ./cmd/web
+    startCommand: ./app
+    envVars:
+      - key: GO_VERSION
+        value: 1.25.5
+      - key: SUBMISSIONS_PATH
+        value: data/submissions.jsonl
+      - key: DATABASE_URL
+        sync: false
